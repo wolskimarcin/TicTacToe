@@ -1,5 +1,6 @@
 package com.busher.tictactoe;
 
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -11,11 +12,14 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class TicTacToeActivity extends AppCompatActivity implements View.OnClickListener {
+    private GridLayout grid_buttons;
     private final Button[][] board = new Button[3][3];
     private boolean player1Turn = true;
     private int roundCount;
     private String player1Name;
     private String player2Name;
+    private ColorDrawable blueForeground;
+    private ColorDrawable redForeground;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,7 +28,7 @@ public class TicTacToeActivity extends AppCompatActivity implements View.OnClick
 
         TextView textViewPlayer1 = findViewById(R.id.text_view_player1);
         TextView textViewPlayer2 = findViewById(R.id.text_view_player2);
-        GridLayout grid_buttons = findViewById(R.id.grid_buttons);
+        grid_buttons = findViewById(R.id.grid_buttons);
 
         int idx = 0;
         for (int i = 0; i < 3; i++) {
@@ -42,6 +46,9 @@ public class TicTacToeActivity extends AppCompatActivity implements View.OnClick
             textViewPlayer1.setText(player1Name);
             textViewPlayer2.setText(player2Name);
         }
+
+        blueForeground = new ColorDrawable(getColor(R.color.grid_foreground_blue_color));
+        redForeground = new ColorDrawable(getColor(R.color.grid_foreground_red_color));
     }
 
     @Override
@@ -55,8 +62,10 @@ public class TicTacToeActivity extends AppCompatActivity implements View.OnClick
 
         if (player1Turn) {
             ((Button) v).setText("X");
+            grid_buttons.setForeground(redForeground);
         } else {
             ((Button) v).setText("O");
+            grid_buttons.setForeground(blueForeground);
         }
 
         roundCount++;
@@ -107,8 +116,7 @@ public class TicTacToeActivity extends AppCompatActivity implements View.OnClick
         }
 
         // Check diagonals
-        if ((field[0][0].equals(field[1][1]) && field[0][0].equals(field[2][2]) && !field[0][0].isEmpty())
-                || (field[0][2].equals(field[1][1]) && field[0][2].equals(field[2][0]) && !field[0][2].isEmpty())) {
+        if ((field[0][0].equals(field[1][1]) && field[0][0].equals(field[2][2]) && !field[0][0].isEmpty()) || (field[0][2].equals(field[1][1]) && field[0][2].equals(field[2][0]) && !field[0][2].isEmpty())) {
             return true;
         }
 

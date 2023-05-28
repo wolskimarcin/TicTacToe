@@ -15,4 +15,6 @@
     <color name="button_pressed_color">#616161</color>
     <color name="button_enabled_color">#9E9E9E</color>
     <color name="button_disabled_color">#B3E5FC</color>
+    <color name="grid_foreground_red_color">#32E91E63</color>
+    <color name="grid_foreground_blue_color">#323F51B5</color>
 </resources>

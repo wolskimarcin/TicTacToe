@@ -12,6 +12,7 @@
         android:layout_height="wrap_content"
         android:background="@color/blue"
         android:drawablePadding="-24dp"
+        android:elevation="4dp"
         android:gravity="center"
         android:padding="8dp"
         android:textColor="@android:color/white"
@@ -27,6 +28,7 @@
         android:layout_height="0dp"
         android:layout_weight="1"
         android:columnCount="3"
+        android:foreground="@color/grid_foreground_blue_color"
         android:rowCount="3">
 
         <Button
@@ -137,6 +139,7 @@
         android:layout_height="wrap_content"
         android:background="@color/red"
         android:drawablePadding="-24dp"
+        android:elevation="4dp"
         android:gravity="center"
         android:padding="8dp"
         android:textColor="@android:color/white"
