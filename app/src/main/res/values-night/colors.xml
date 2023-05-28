@@ -9,9 +9,9 @@
     <color name="red">#E91E63</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
-    <color name="field_background">#FFFFFFFF</color>
+    <color name="field_background">#434343</color>
     <color name="field_border">#FF000000</color>
-    <color name="field_text_color">#FF000000</color>
+    <color name="field_text_color">#FFFFFFFF</color>
     <color name="button_pressed_color">#616161</color>
     <color name="button_enabled_color">#9E9E9E</color>
     <color name="button_disabled_color">#B3E5FC</color>
