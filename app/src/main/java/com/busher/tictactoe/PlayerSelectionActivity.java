@@ -28,6 +28,9 @@ public class PlayerSelectionActivity extends AppCompatActivity {
         String player1Name = editTextPlayer1.getText().toString();
         String player2Name = editTextPlayer2.getText().toString();
 
+        if (player1Name.isEmpty()) player1Name = "Player 1";
+        if (player2Name.isEmpty()) player2Name = "Player 2";
+
         Intent intent = new Intent(PlayerSelectionActivity.this, TicTacToeActivity.class);
         intent.putExtra("player1", player1Name);
         intent.putExtra("player2", player2Name);
