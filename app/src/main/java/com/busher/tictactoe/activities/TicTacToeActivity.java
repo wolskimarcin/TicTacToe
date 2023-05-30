@@ -1,4 +1,4 @@
-package com.busher.tictactoe;
+package com.busher.tictactoe.activities;
 
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
@@ -7,9 +7,11 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.GridLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.busher.tictactoe.R;
+import com.busher.tictactoe.components.GameResultDialog;
 
 public class TicTacToeActivity extends AppCompatActivity implements View.OnClickListener {
     private GridLayout grid_buttons;
@@ -72,24 +74,29 @@ public class TicTacToeActivity extends AppCompatActivity implements View.OnClick
 
         if (checkForWin()) {
             if (player1Turn) {
-                win(1);
+                showGameResultDialog(player1Name + " wins!");
             } else {
-                win(2);
+                showGameResultDialog(player2Name + " wins!");
             }
         } else if (roundCount == 9) {
-            draw();
+            showGameResultDialog("It's a Tie!");
         } else {
             player1Turn = !player1Turn;
         }
     }
 
-    private void win(int playerNum) {
-        if (playerNum == 1) {
-            Toast.makeText(this, player1Name + " wins!", Toast.LENGTH_SHORT).show();
-        } else {
-            Toast.makeText(this, player2Name + " wins!", Toast.LENGTH_SHORT).show();
-        }
-        onBackPressed();
+    private void showGameResultDialog(String announcement) {
+        GameResultDialog gameResultDialog = new GameResultDialog(TicTacToeActivity.this, announcement) {
+            @Override
+            protected void onCallback(boolean isExit) {
+                if (isExit) {
+                    TicTacToeActivity.this.onBackPressed();
+                } else {
+                    TicTacToeActivity.this.recreate();
+                }
+            }
+        };
+        gameResultDialog.show();
     }
 
     private boolean checkForWin() {
@@ -123,7 +130,4 @@ public class TicTacToeActivity extends AppCompatActivity implements View.OnClick
         return false; // No winner yet
     }
 
-    private void draw() {
-        onBackPressed();
-    }
 }

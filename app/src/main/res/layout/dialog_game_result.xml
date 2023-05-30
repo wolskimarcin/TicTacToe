@@ -1,0 +1,54 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <TextView
+        android:id="@+id/text_view_winner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:fontFamily="sans-serif-medium"
+        android:gravity="center"
+        android:padding="10dp"
+        android:textColor="@color/field_text_color"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        tools:text="Player 1 wins!" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:padding="8dp"
+        android:weightSum="2">
+
+        <Button
+            android:id="@+id/button_restart"
+            style="@style/GameResultButtonStyle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_weight="1"
+            android:maxLines="1"
+            android:minWidth="220dp"
+            android:text="Restart" />
+
+        <Button
+            android:id="@+id/button_exit"
+            style="@style/GameResultButtonStyle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_weight="1"
+            android:maxLines="1"
+            android:minWidth="220dp"
+            android:text="Exit" />
+
+    </LinearLayout>
+
+</LinearLayout>

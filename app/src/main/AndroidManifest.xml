@@ -12,7 +12,7 @@
         android:theme="@style/Theme.TicTacToe.NoActionBar"
         tools:targetApi="31">
         <activity
-            android:name=".PlayerSelectionActivity"
+            android:name=".activities.PlayerSelectionActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -20,7 +20,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".TicTacToeActivity" />
+        <activity android:name=".activities.TicTacToeActivity" />
     </application>
 
 </manifest>
