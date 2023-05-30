@@ -1,6 +1,6 @@
 package com.busher.tictactoe.activities;
 
-import android.graphics.drawable.ColorDrawable;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -9,6 +9,7 @@ import android.widget.GridLayout;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.content.res.AppCompatResources;
 
 import com.busher.tictactoe.R;
 import com.busher.tictactoe.components.GameResultDialog;
@@ -20,8 +21,8 @@ public class TicTacToeActivity extends AppCompatActivity implements View.OnClick
     private int roundCount;
     private String player1Name;
     private String player2Name;
-    private ColorDrawable blueForeground;
-    private ColorDrawable redForeground;
+    private Drawable player1Foreground;
+    private Drawable player2Foreground;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,8 +50,8 @@ public class TicTacToeActivity extends AppCompatActivity implements View.OnClick
             textViewPlayer2.setText(player2Name);
         }
 
-        blueForeground = new ColorDrawable(getColor(R.color.grid_foreground_blue_color));
-        redForeground = new ColorDrawable(getColor(R.color.grid_foreground_red_color));
+        player1Foreground = AppCompatResources.getDrawable(this, R.drawable.gradient_foreground_player1);
+        player2Foreground = AppCompatResources.getDrawable(this, R.drawable.gradient_foreground_player2);
     }
 
     @Override
@@ -64,10 +65,10 @@ public class TicTacToeActivity extends AppCompatActivity implements View.OnClick
 
         if (player1Turn) {
             ((Button) v).setText("X");
-            grid_buttons.setForeground(redForeground);
+            grid_buttons.setForeground(player2Foreground);
         } else {
             ((Button) v).setText("O");
-            grid_buttons.setForeground(blueForeground);
+            grid_buttons.setForeground(player1Foreground);
         }
 
         roundCount++;
