@@ -3,6 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/background"
+    android:gravity="center"
     android:orientation="vertical"
     android:padding="16dp">
 
@@ -19,6 +20,7 @@
         android:id="@+id/editTextPlayer1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
         android:layout_marginBottom="16dp"
         android:hint="Player 1"
         android:inputType="textPersonName"
@@ -37,6 +39,7 @@
         android:id="@+id/buttonStartGame"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
         android:text="Start Game"
         android:textSize="18sp" />
 

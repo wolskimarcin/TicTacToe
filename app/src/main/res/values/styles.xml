@@ -17,4 +17,8 @@
         <item name="android:textSize">18sp</item>
     </style>
 
+    <style name="RoundedCornersDialog" parent="@style/Theme.MaterialComponents.Dialog">
+        <item name="dialogCornerRadius">8dp</item>
+    </style>
+
 </resources>
