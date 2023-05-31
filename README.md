@@ -2,7 +2,7 @@
 
 This is a simple TicTacToe game for Android devices. It allows two players to play the classic game of TicTacToe on their Android phones or tablets.
 
-![tictactoe](https://github.com/wolskimarcin/TicTacToe/assets/103077297/79f54d6e-9d41-4d54-8051-8f86b171b9d0)
+![tictactoe](https://github.com/wolskimarcin/TicTacToe/assets/103077297/4cb6ec2f-570f-4b0c-a7d9-63b2241acbc6)
 
 ## Features
 
